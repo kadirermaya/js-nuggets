@@ -38,4 +38,4 @@ result.innerHTML = categories
   .map((category) => {
     return `<button>${category}</button>`;
   })
-  .join("");
+  .join(" ");
