@@ -1,3 +1,7 @@
+import Book from "./Book";
+
+
+
 class Backpack {
   constructor(
     name,
@@ -7,7 +11,8 @@ class Backpack {
     strapLengthL,
     strapLengthR,
     lidOpen,
-    dateAcquired
+    dateAcquired,
+    books,
   ) {
     this.name = name;
     this.volume = volume;
@@ -19,6 +24,7 @@ class Backpack {
     };
     this.lidOpen = lidOpen;
     this.dateAcquired = dateAcquired;
+    this.books = [book1, book2, book3, book4, book5]
   }
   toggleLid(lidStatus) {
     this.lidOpen = lidStatus;
@@ -35,5 +41,42 @@ class Backpack {
     return daysSinceAcquired;
   }
 }
+const book1 = new Book(
+  "pet semetary",
+  "classics",
+  "stephan king",
+  350
+)
+
+const book2 = new Book(
+  "for whom the bell tolls",
+  "action",
+  "ernest hemingway",
+  125
+)
+
+const book3 = new Book(
+  "the adventure of tom sawyer",
+  "fiction",
+  "mark twain",
+  250
+)
+
+const book4 = new Book(
+  "peace and war",
+  "horror",
+  "leo tolstoy",
+  275
+)
+
+const book5 = new Book(
+  "oliver twist",
+  "mystery",
+  "charles dickens",
+  190
+)
+
+
+
 
 export default Backpack;

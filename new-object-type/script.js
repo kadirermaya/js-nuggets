@@ -7,6 +7,7 @@
 
 import Backpack from "./Backpack.js";
 
+
 const everydayPack = new Backpack(
   "Everyday Backpack",
   30,
@@ -21,3 +22,4 @@ const everydayPack = new Backpack(
 console.log("The everydayPack object:", everydayPack);
 console.log("The pocketNum value:", everydayPack.pocketNum);
 console.log("Days since aquired:", everydayPack.backpackAge());
+console.log("Books in my backpack:", everydayPack.books.map(names) => names);
