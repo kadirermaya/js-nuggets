@@ -35,3 +35,15 @@ function printPerson({
 }
 
 printPerson(kadir);
+
+var a = 0.1;
+var b = 0.2;
+var result = a + b;
+Math.ceil(result);
+console.log(result);
+
+if (a + b == 0.3) {
+  console.log("equal");
+} else {
+  console.log("nope");
+}
