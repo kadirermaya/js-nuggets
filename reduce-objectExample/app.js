@@ -10,7 +10,7 @@ const cart = [
     },
     {
         title: 'Xiaomi Y',
-        price: 599,
+        price: 599.99,
         amount: 4
     },
     {
@@ -27,10 +27,12 @@ const cart = [
 ];
 
 
-let total = cart.reduce((total, cartItem) => {
+let { totalItems, cartTotal } = cart.reduce((total, cartItem) => {
     const { amount, price } = cartItem;
     //count
     total.totalItems += amount;
+    // count sum
+    total.cartTotal += amount * price;
     return total
 },
     {
@@ -38,8 +40,38 @@ let total = cart.reduce((total, cartItem) => {
         cartTotal: 0
     })
 
-console.log(total);
+cartTotal = parseFloat(cartTotal.toFixed(2))
+console.log(totalItems, cartTotal);
 
 // github repos example
 
-const url = "";
+const url = "https://api.github.com/users/kadirermaya/repos?per_page=100";
+
+const fetchRepos = async () => {
+    const response = await fetch(url);
+    const data = await response.json();
+    const newData = data.reduce((total, repo) => {
+        const { language } = repo;
+        if (language) {
+            total[language] = total[language] + 1 || 1
+        }
+
+        // if (language) {
+
+        //     if (total[language]) {
+        //         total[language] = total[language] + 1
+        //     }
+
+        //     else {
+        //         total[language] = 1
+        //     }
+        // }
+
+
+        return total
+    }, {})
+    console.log(newData)
+}
+
+
+fetchRepos();
